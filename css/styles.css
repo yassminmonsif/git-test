@@ -36,3 +36,8 @@ body {
 .navbar-inverse {
     background-color: #512DA8;
 }
+
+.badge-secondary {
+    color: #fff;
+    background-color: #6c757d;
+}
