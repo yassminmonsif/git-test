@@ -41,3 +41,36 @@ body {
     color: #fff;
     background-color: #6c757d;
 }
+
+.card-body {
+    padding: 30px;
+}
+
+.form-check-label {
+    padding-left: 1rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding-right: 19px;
+}
+
+.form-check-inline .form-check-label {
+    vertical-align: baseline;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.navbar-dark {
+    background-color: 1px solid #512DAB;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
