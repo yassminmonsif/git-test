@@ -170,16 +170,14 @@
                     </div>
                     <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> </a>
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carousel-pause"> <span class="fa fa-pause"></span> </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play"> <span class="fa fa-play"></span> </button>
-                    </div>
+                    <button class="btn btn-danger btn-sm" id="carouselButton"> <span id="carousel-button-icon" class="fa fa-pause"></span> </button>
                 </div>
             </div>
         </div>
         <div class="row row-content align-items-center flex-sm-row-reverse">
             <div class="col-sm-4 col-md-3 ">
-                <h3>Our Lipsmacking Culinary Creations</h3> </div>
+                <h3>Our Lipsmacking Culinary Creations</h3>
+            </div>
             <div class="col-sm-8 ">
                 <div class="media"> <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/uthappizza.png" alt="Uthappizza">
                     <div class="media-body">
@@ -191,7 +189,8 @@
         </div>
         <div class="row row-content align-items-center ">
             <div class="col-sm-4 col-md-3 ">
-                <h4>This Month's Promotions</h4> </div>
+                <h4>This Month's Promotions</h4>
+            </div>
             <div class="col-sm-8 ">
                 <div class="media">
                     <div class="media-body">
@@ -202,7 +201,8 @@
         </div>
         <div class="row row-content align-items-center flex-sm-row-reverse">
             <div class="col-sm-4  col-md-3">
-                <h3>Meet Our Culinary Specialists</h3> </div>
+                <h3>Meet Our Culinary Specialists</h3>
+            </div>
             <div class="col-sm-8  ">
                 <div class="media"> <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="Alberto Somayya">
                     <div class="media-body">
@@ -251,17 +251,23 @@
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#mycarousel").carousel({
                 interval: 2000
             });
-            $("#carousel-pause").click(function () {
-                $("#mycarousel").carousel('pause');
-            });
-            $("#carousel-play").click(function () {
-                $("#mycarousel").carousel('cycle');
+            $("#carouselButton").click(function() {
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                } else if ($("#carouselButton").children("span").hasClass('fa-play')) {
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');
+                }
             });
         });
+
     </script>
 </body>
 
