@@ -89,3 +89,16 @@ body {
     left: 0;
     min-height: 300px;
 }
+
+.btn-secondary {
+    color: #292b2c;
+    background-color: #827a7a;
+    border-color: #ccc;
+}
+
+#carouselButton {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
