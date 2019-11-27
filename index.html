@@ -26,7 +26,7 @@
                     <li class="nav-item"> <a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a> </li>
                 </ul> <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -38,7 +38,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="closeLogin">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -65,13 +65,13 @@
             </div>
         </div>
     </div>
-    <div id="ReverseTable" class="modal fade" role="dialog">
+    <div id="reservationModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="closeReservation">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -135,7 +135,7 @@
                     <p>We take inspiration from the World's best cuisins, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm-3 align-self-center"> <img src="img/logo.png" class="img-fluid"> </div>
-                <div class="col-12 col-sm-3 "> <a data-toggle="modal" data-target="#ReverseTable" class="btn btn-primary btn-sm btn-block btn-warning">Reverse Table</a> </div>
+                <div class="col-12 col-sm-3 "> <a id="reservationButton" class="btn btn-primary btn-sm btn-block btn-warning">Reverse Table</a> </div>
             </div>
         </div>
     </header>
@@ -265,6 +265,23 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');
                 }
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#loginButton").click(function() {
+                $("#loginModal").modal('show');
+            });
+            $("#closeLogin").click(function() {
+                $("#loginModal").modal('hide');
+            });
+            $("#reservationButton").click(function() {
+                $("#reservationModal").modal('show');
+            });
+            $("#closeReservation").click(function() {
+                $("#reservationModal").modal('hide');
             });
         });
 
